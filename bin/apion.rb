@@ -17,7 +17,7 @@ def conversion
 	@conversion ||= parseCSV "conversion"
 end
 
-def apimatch(texte)
+def apion(texte)
 	texte = texte.downcase
 	texte.gsub(SPE, "").split.map do |mot|
 		exceptions[mot] || "".tap do |result|
