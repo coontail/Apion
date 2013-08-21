@@ -3,7 +3,11 @@
 Easy-to-use French => Phonetic Alphabet translator
 
 ~~~
-require "./apion.rb"
+gem install apion
+~~~
+
+~~~
+require "apion"
 ~~~
 
 
