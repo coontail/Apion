@@ -32,4 +32,6 @@ irb(main):005:0> apion("Un chat toudouchoubidou")
 ~~~
 
 
-***important : All IPA characters can't be displayed in this README, so the translation can be slightly off***
+
+
+***Important : All IPA characters can't be displayed in this README, so the translation can be slightly off***
