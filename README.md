@@ -27,6 +27,9 @@ irb(main):003:0> apion("Le chat dodu et roux mange ? Oh ! C'est une belle quiche
 irb(main):004:0> apion("Un chat dodu")
 => ["œ̃", "ʃa", "dɔdy"]
 
-irb(main):002:0> apion("Un chat toudouchoubidou")
+irb(main):005:0> apion("Un chat toudouchoubidou")
 => ["œ̃", "ʃa", "tuduʃubidu"]
 ~~~
+
+
+***important : All IPA characters can't be displayed in this README, so the translation can be slightly off***
