@@ -1,0 +1,9 @@
+GEM
+  specs:
+    json (1.8.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  json
