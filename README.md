@@ -35,7 +35,12 @@ irb(main):005:0> apion("Un chat toudouchoubidou")
 => ["œ̃", "ʃa", "tuduʃubidu"]
 ~~~
 
+*Read files*
 
+~~~
+irb(main):006:0> apion_read("mylife.txt")
+=> ["ʒɛm", "lœ", "kyri"]
+~~~
 
 
 ***Important : All IPA characters can't be displayed in this README, so the translation can be slightly off***
