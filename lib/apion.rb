@@ -29,7 +29,3 @@ def apion(texte)
 	end
 end
 
-def apion_read(path)
-	return apion(File.read(path))
-end
-
