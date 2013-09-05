@@ -1,8 +1,9 @@
 #!/usr/bin/env ruby
 
-require "json"
-
 module Apion
+
+	require "json"
+	require "timeout"
 
 	ROOT = File.expand_path("../..", __FILE__)
 	eval(File.read("#{ROOT}/lib/special_chars.rb"))
@@ -23,12 +24,16 @@ module Apion
 		texte = texte.downcase
 		texte.gsub(SPE, "").split.map do |mot|
 			exceptions[mot] || "".tap do |result|
-				conversion.select { |regle| mot =~ /#{regle}/ }.first.tap do |regle, api|
-					mot.sub! /#{regle}/, ""
-					result << api.to_s
-				end until mot.empty?
+				Timeout::timeout(1) do
+					conversion.select { |regle| mot =~ /#{regle}/ }.first.tap do |regle, api|
+						mot.sub! /#{regle}/, ""
+						result << api.to_s
+					end until mot.empty?
+				end
 			end
 		end
+	rescue Timeout::Error
+		return []
 	end
 
 end
