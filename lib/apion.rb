@@ -7,6 +7,7 @@ module Apion
 
 	ROOT = File.expand_path("../..", __FILE__)
 	eval(File.read("#{ROOT}/lib/special_chars.rb"))
+	@timeout = 1
 
 	def Apion.parseCSV(path)
 		Hash[File.open("#{ROOT}/data/#{path}.csv").read.split("\n").map {|ligne| ligne.split("#")}]
@@ -20,11 +21,19 @@ module Apion
 		@conversion ||= parseCSV "conversion"
 	end
 
+	def Apion.set_timeout(seconds)
+		@timeout = seconds
+	end
+	
+	def Apion.timeout
+		@timeout
+	end
+
 	def Apion.apion(texte)
 		texte = texte.downcase
 		texte.gsub(SPE, "").split.map do |mot|
 			exceptions[mot] || "".tap do |result|
-				Timeout::timeout(1) do
+				Timeout::timeout(timeout) do
 					conversion.select { |regle| mot =~ /#{regle}/ }.first.tap do |regle, api|
 						mot.sub! /#{regle}/, ""
 						result << api.to_s

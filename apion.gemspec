@@ -1,7 +1,7 @@
 Gem::Specification.new do |s|
   s.name        = 'apion'
-  s.version     = '0.1.5'
-  s.date        = '2013-09-05'
+  s.version     = '0.1.6'
+  s.date        = '2013-09-06'
   s.summary     = "Apion"
   s.description = "Easy-to-use Fr/Api translator"
   s.authors     = ["Galaad Gauthier"]
